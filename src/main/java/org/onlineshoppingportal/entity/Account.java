@@ -69,7 +69,7 @@ public class Account implements Serializable {
 	}
 	
 	@Column(name = "Password", length = 255, nullable = false)
-	public String getPasword() {
+	public String getPassword() {
 		return password;
 	}
 	

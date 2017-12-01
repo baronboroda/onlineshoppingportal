@@ -78,12 +78,25 @@ public class Order implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "PRODUCT_ID", nullable = false,
 				foreignKey = @ForeignKey(name = "ORDER_DETAIL_ORDER_FK"))
+	public Product getProduct() {
+		return product;
+	}
+	
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ACCOUNT_ID", nullable = false,
+			foreignKey = @ForeignKey(name = "ACCOUNT_DETAIL_ORDER_FK"))
 	public Account getAccount() {
 		return account;
 	}
 	
 	public void setAccount(Account account) {
-		this.account = account;
+		this. account = account;
 	}
+	
+	
 }
 
